@@ -28,6 +28,103 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+    
+    <style>
+        /* PORTOFOLIO */
+        #portofolio h5 {padding-top:10px;}
+        #filters { margin-bottom: 10px; padding: 0; }
+        #filters li { float: left; list-style: none; margin-right: 5px; margin-bottom: 10px; }
+        #filters li a { padding: 6px 15px 2px 15px; text-decoration: none; font-size: 12px; }
+        .portofoliothumboverlay { position: absolute; top: 0; left: 0; width: 100%; height: 97%; background: rgba(0, 0, 0, 0.8); display: block; opacity: 0; -webkit-transition: opacity 0.25s ease-out; -moz-transition: opacity 0.25s ease-out; -o-transition: opacity 0.25s ease-out; transition: opacity 0.25s ease-out; }
+        .portofoliothumboverlay .inner { display: block; text-align: center; position: absolute; top: 47%; left: 37%; }
+        .portofoliothumboverlay .viewgallery a { display: block; text-align: center; position: absolute; top: 5%; left: 81%; color: #7e7e7e; font-size: 11px; text-transform: uppercase; }
+        .portofoliothumboverlay:hover { -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -ms-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out; opacity: 1; }
+        .portofoliothumb { position: relative; width: 100%; height: 100%; cursor: pointer; border: none; }
+        .portofoliothumb:hover { opacity: 1 }
+        .portofoliothumb > img { width: 100%!important; height: 100%!important; }
+        a.projectdetail { background: #33877d; color: #fff; padding: 7px 7px 6px 7px; font-size: 12px; border-radius: 3px; -webkit-transition-property: color, background; -webkit-transition-duration: 1s, 1s; text-shadow: 1px 1px 1px #111; }
+        .projectdetail:hover { background: #70aba4; color: #fff; text-shadow: 1px 1px 1px #111; }
+        .galleryicon { z-index: 0; margin-right: 5px; width: 15px; }
+        .portofoliobutton { display: inline-block; *display: inline; padding: 4px 14px; margin-bottom: 0; *margin-left: .3em; font-size: 14px; line-height: 20px; *line-height: 20px; color: #333333; text-align: center; text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); vertical-align: middle; cursor: pointer; background-color: #f5f5f5; *background-color: #e6e6e6; background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6)); background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6); background-image: -o-linear-gradient(top, #ffffff, #e6e6e6); background-image: linear-gradient(to bottom, #ffffff, #e6e6e6); background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6); background-repeat: repeat-x; border: 1px solid #bbbbbb; *border: 0; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0); filter: progid:dximagetransform.microsoft.gradient(enabled=false); *zoom: 1; -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); border-color: #c5c5c5; border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25); }
+        .portofoliobutton:focus { outline: none }
+        .portofoliobutton.selected { color: #ffffff; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); background-color: #555; *background-color: #444; background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#555), to(#444)); background-image: -webkit-linear-gradient(top, #555, #444); background-image: -o-linear-gradient(top, #555, #444); background-image: linear-gradient(to bottom, #555, #444); background-image: -moz-linear-gradient(top, #555, #444); background-repeat: repeat-x; border-color: #444 #444 #387038; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff555', endColorstr='#ff444', GradientType=0); filter: progid:dximagetransform.microsoft.gradient(enabled=false); }
+        .isotope-item { z-index: 2 }
+        .isotope-hidden.isotope-item { pointer-events: none; z-index: 1; }
+        .isotope,.isotope .isotope-item { -webkit-transition-duration: 0.8s; -moz-transition-duration: 0.8s; -ms-transition-duration: 0.8s; -o-transition-duration: 0.8s; transition-duration: 0.8s; }
+        .isotope { -webkit-transition-property: height, width; -moz-transition-property: height, width; -ms-transition-property: height, width; -o-transition-property: height, width; transition-property: height, width; }
+        .isotope .isotope-item { -webkit-transition-property: -webkit-transform, opacity; -moz-transition-property: -moz-transform, opacity; -ms-transition-property: -ms-transform, opacity; -o-transition-property: -o-transform, opacity; transition-property: transform, opacity; }
+        .isotope.no-transition,.isotope.no-transition .isotope-item,.isotope .isotope-item.no-transition { -webkit-transition-duration: 0s; -moz-transition-duration: 0s; -ms-transition-duration: 0s; -o-transition-duration: 0s; transition-duration: 0s; }
+
+                * {box-sizing:border-box}
+                body {font-family: Verdana,sans-serif;}
+                .mySlides {display:none}
+
+                /* Slideshow container */
+                .slideshow-container {
+                  max-width: 1000px;
+                  position: relative;
+                  margin: auto;
+                }
+
+                /* Caption text */
+                .text {
+                  color: #f2f2f2;
+                  font-size: 15px;
+                  padding: 8px 12px;
+                  position: absolute;
+                  bottom: 8px;
+                  width: 100%;
+                  text-align: center;
+                }
+
+                /* Number text (1/3 etc) */
+                .numbertext {
+                  color: #f2f2f2;
+                  font-size: 12px;
+                  padding: 8px 12px;
+                  position: absolute;
+                  top: 0;
+                }
+
+                /* The dots/bullets/indicators */
+                .dot {
+                  height: 13px;
+                  width: 13px;
+                  margin: 0 2px;
+                  background-color: #bbb;
+                  border-radius: 50%;
+                  display: inline-block;
+                  transition: background-color 0.6s ease;
+                }
+
+                .active {
+                  background-color: #717171;
+                }
+
+                /* Fading animation */
+                .fade {
+                  -webkit-animation-name: fade;
+                  -webkit-animation-duration: 1.5s;
+                  animation-name: fade;
+                  animation-duration: 1.5s;
+                }
+
+                @-webkit-keyframes fade {
+                  from {opacity: .4}
+                  to {opacity: 1}
+                }
+
+                @keyframes fade {
+                  from {opacity: .4}
+                  to {opacity: 1}
+                }
+
+                /* On smaller screens, decrease text size */
+                @media only screen and (max-width: 300px) {
+                  .text {font-size: 11px}
+                }
+        </style>
+       
 </head>
 <body>
     <!-- Navigation -->
@@ -70,20 +167,53 @@
     <!--End Navigation -->
 <!-- CONTENT 
 ================================================== -->
+    
+
 
 <div class="hr">
+   
 </div>
 <section  id="contact-sec">
     
+    
     <!--End Body-->
         <div class="container">
-           
+             <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                  <div class="numbertext">1 / 3</div>
+                  <img src="assets/img/service1.jpg" style="width:100%">
+                  <div class="text">10Kw</div>
+                </div>
+
+                <div class="mySlides fade">
+                  <div class="numbertext">2 / 3</div>
+                  <img src="assets/img/service2.jpg" style="width:100%">
+                  <div class="text">sunPower</div>
+                </div>
+
+                <div class="mySlides fade">
+                  <div class="numbertext">3 / 3</div>
+                  <img src="assets/img/service3.jpg" style="width:100%">
+                  <div class="text">100Kw</div>
+                </div>
+
+              </div>
+                <br>
+
+                <div style="text-align:center">
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                </div>
+            <p></p>
+            <p></p>
+            <!--
             <div class="six columns category trains isotope-item"> 
                 <div class="portofoliothumb">
-			        <img src="assets/img/service1.jpg" alt=""  style="width: 50% !important; height: 100% !important;" />
+			        <img src="assets/img/service1.jpg" alt=""/> style="width: 50% !important; height: 100% !important;" 
 		        </div> 
-            </div>
-            
+            </div>-->
             <div style="text-align:justify;">
                 Le Energie Rinnovabili: fonti, novità, normative e metodi di approvvigionamento ed utilizzo. 
                 da Ossida trovi tutti i dettagli sulla normativa italiana e le ultime novità introdotte dal Governo, 
