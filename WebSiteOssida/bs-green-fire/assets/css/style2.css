@@ -731,7 +731,7 @@ li.sfHover > a > .sf-sub-indicator { background-position: -10px -100px }
 .portofoliothumboverlay:hover { -webkit-transition: all .3s ease-in-out; -moz-transition: all .3s ease-in-out; -ms-transition: all .3s ease-in-out; -o-transition: all .3s ease-in-out; transition: all .3s ease-in-out; opacity: 1; }
 .portofoliothumb { position: relative; width: 100%; height: 100%; cursor: pointer; border: none; }
 .portofoliothumb:hover { opacity: 1 }
-.portofoliothumb > img { width: 100%!important; height: 250px; }
+.portofoliothumb > img { width: 100%; height: 100%; }
 a.projectdetail { background: #33877d; color: #fff; padding: 7px 7px 6px 7px; font-size: 12px; border-radius: 3px; -webkit-transition-property: color, background; -webkit-transition-duration: 1s, 1s; text-shadow: 1px 1px 1px #111; }
 .projectdetail:hover { background: #70aba4; color: #fff; text-shadow: 1px 1px 1px #111; }
 .galleryicon { z-index: 0; margin-right: 5px; width: 15px; }
