@@ -257,5 +257,78 @@ color:#fff;
 }
 
 
+
+
+.containermap{
+  width: 100%;
+  margin: 0 auto;
+  margin-top:18px;
+}
+
+#map_container{
+  position: relative;
+}
+#map{
+    height: 30px;
+    overflow: hidden;
+    padding-bottom: 60.25%;
+    padding-top: 0px;
+    position: relative;
+}
+
+input[type=text], input[type=url], input[type=email], input[type=password], input[type=tel] {
+  -webkit-appearance: none; -moz-appearance: none;
+  display: block;
+  margin: 0;
+  width: 100%; height: 40px;
+  line-height: 40px; font-size: 17px;
+  border: 1px solid #bbb;
+}
+
+textarea { /* Stili specifici per la teaxtarea */
+    background: white; /* Sfondo con immagine */
+    font-size: 12px;
+    height: 200px;
+    width: 320px;
+    overflow: hidden; /* disabilitare la scrollbar in IE */
+}
+
+/**
+ * Profile image component
+ */
+.profile-header-container{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.profile-header-img {
+    padding: 54px;
+}
+
+.profile-header-img > img.img-circle {
+    width: 120px;
+    height: 120px;
+    border: 2px solid #51D2B7;
+}
+
+.profile-header {
+    margin-top: 43px;
+}
+/**
+ * Ranking component
+ */
+.rank-label-container {
+    margin-top: -19px;
+    /* z-index: 1000; */
+    text-align: center;
+}
+
+.label.label-default.rank-label {
+    background-color: rgb(81, 210, 183);
+    padding: 5px 10px 5px 10px;
+    border-radius: 27px;
+}
+
+
 .done { display: none }
 
