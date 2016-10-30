@@ -67,8 +67,9 @@
 
         initialization: function () {
             mainApp.main_fun();
-
+ 
         }
+
 
     }
     // Initializing ///
